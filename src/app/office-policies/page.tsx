@@ -1,9 +1,29 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Office Policies | OLIV - Functional Medicine",
+  title: "Office Policies",
   description:
     "OLIV Functional Medicine's office policies including appointment scheduling, cancellation, communication guidelines, and client responsibilities.",
+  openGraph: {
+    title: "Office Policies | OLIV - Functional Medicine",
+    description:
+      "OLIV Functional Medicine's office policies including appointment scheduling, cancellation, communication guidelines, and client responsibilities.",
+    url: "https://oliv-functional-medicine.com/office-policies",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Office Policies | OLIV - Functional Medicine",
+    description:
+      "OLIV Functional Medicine's office policies including appointment scheduling, cancellation, communication guidelines, and client responsibilities.",
+  },
+  alternates: {
+    canonical: "https://oliv-functional-medicine.com/office-policies",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function OfficePoliciesPage() {

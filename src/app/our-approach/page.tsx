@@ -1,9 +1,25 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Approach | OLIV - Functional Medicine",
+  title: "Our Approach",
   description:
     "Discover OLIV's functional nutrition methodology - root-cause analysis, advanced testing, personalized plans, and ongoing support for optimal health.",
+  openGraph: {
+    title: "Our Approach | OLIV - Functional Medicine",
+    description:
+      "Discover OLIV's functional nutrition methodology - root-cause analysis, advanced testing, personalized plans, and ongoing support for optimal health.",
+    url: "https://oliv-functional-medicine.com/our-approach",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Approach | OLIV - Functional Medicine",
+    description:
+      "Discover OLIV's functional nutrition methodology - root-cause analysis, advanced testing, personalized plans, and ongoing support for optimal health.",
+  },
+  alternates: {
+    canonical: "https://oliv-functional-medicine.com/our-approach",
+  },
 };
 
 export default function OurApproachPage() {

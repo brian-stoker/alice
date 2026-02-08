@@ -1,9 +1,29 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Notice of Privacy Practices | OLIV - Functional Medicine",
+  title: "Notice of Privacy Practices",
   description:
     "OLIV Functional Medicine's Notice of Privacy Practices and commitment to protecting your health information in compliance with HIPAA regulations.",
+  openGraph: {
+    title: "Notice of Privacy Practices | OLIV - Functional Medicine",
+    description:
+      "OLIV Functional Medicine's Notice of Privacy Practices and commitment to protecting your health information in compliance with HIPAA regulations.",
+    url: "https://oliv-functional-medicine.com/privacy-practices",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Notice of Privacy Practices | OLIV - Functional Medicine",
+    description:
+      "OLIV Functional Medicine's Notice of Privacy Practices and commitment to protecting your health information in compliance with HIPAA regulations.",
+  },
+  alternates: {
+    canonical: "https://oliv-functional-medicine.com/privacy-practices",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function PrivacyPracticesPage() {

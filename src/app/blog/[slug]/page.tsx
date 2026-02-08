@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${post.title} | OLIV Blog`,
+    title: post.title,
     description: post.excerpt || undefined,
     openGraph: {
       title: post.title,
@@ -29,6 +29,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.publishedAt?.toISOString(),
       authors: ['Courtney Castler, MS-HNFM'],
       tags: post.tags,
+      url: `https://oliv-functional-medicine.com/blog/${slug}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt || undefined,
+    },
+    alternates: {
+      canonical: `https://oliv-functional-medicine.com/blog/${slug}`,
     },
   };
 }

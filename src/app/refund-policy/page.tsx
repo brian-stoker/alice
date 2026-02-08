@@ -1,9 +1,29 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Refund Policy | OLIV - Functional Medicine",
+  title: "Refund Policy",
   description:
     "OLIV Functional Medicine's refund and cancellation policy for nutrition consultations and services.",
+  openGraph: {
+    title: "Refund Policy | OLIV - Functional Medicine",
+    description:
+      "OLIV Functional Medicine's refund and cancellation policy for nutrition consultations and services.",
+    url: "https://oliv-functional-medicine.com/refund-policy",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Refund Policy | OLIV - Functional Medicine",
+    description:
+      "OLIV Functional Medicine's refund and cancellation policy for nutrition consultations and services.",
+  },
+  alternates: {
+    canonical: "https://oliv-functional-medicine.com/refund-policy",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function RefundPolicyPage() {

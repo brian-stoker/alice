@@ -1,9 +1,25 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pricing | OLIV - Functional Medicine",
+  title: "Pricing",
   description:
     "Learn about OLIV's functional nutrition pricing and program options. Schedule a free discovery call to discuss your needs and receive a personalized quote.",
+  openGraph: {
+    title: "Pricing | OLIV - Functional Medicine",
+    description:
+      "Learn about OLIV's functional nutrition pricing and program options. Schedule a free discovery call to discuss your needs and receive a personalized quote.",
+    url: "https://oliv-functional-medicine.com/pricing",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pricing | OLIV - Functional Medicine",
+    description:
+      "Learn about OLIV's functional nutrition pricing and program options. Schedule a free discovery call to discuss your needs and receive a personalized quote.",
+  },
+  alternates: {
+    canonical: "https://oliv-functional-medicine.com/pricing",
+  },
 };
 
 export default function PricingPage() {

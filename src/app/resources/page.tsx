@@ -1,9 +1,25 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Resources | OLIV - Functional Medicine",
+  title: "Resources",
   description:
     "Explore curated resources for functional nutrition including recommended books, articles, testing partners, and educational materials to support your health journey.",
+  openGraph: {
+    title: "Resources | OLIV - Functional Medicine",
+    description:
+      "Explore curated resources for functional nutrition including recommended books, articles, testing partners, and educational materials to support your health journey.",
+    url: "https://oliv-functional-medicine.com/resources",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Resources | OLIV - Functional Medicine",
+    description:
+      "Explore curated resources for functional nutrition including recommended books, articles, testing partners, and educational materials to support your health journey.",
+  },
+  alternates: {
+    canonical: "https://oliv-functional-medicine.com/resources",
+  },
 };
 
 export default function ResourcesPage() {

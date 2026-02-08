@@ -1,11 +1,28 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getPublishedPosts, getAllTags } from '@/lib/blog';
 
 export const metadata: Metadata = {
-  title: 'Blog | OLIV - Functional Medicine Insights',
+  title: 'Blog',
   description:
     'Explore evidence-based articles on functional nutrition, gut health, root-cause medicine, and holistic wellness from OLIV Functional Medicine.',
+  openGraph: {
+    title: 'Blog | OLIV - Functional Medicine Insights',
+    description:
+      'Explore evidence-based articles on functional nutrition, gut health, root-cause medicine, and holistic wellness from OLIV Functional Medicine.',
+    url: 'https://oliv-functional-medicine.com/blog',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | OLIV - Functional Medicine Insights',
+    description:
+      'Explore evidence-based articles on functional nutrition, gut health, root-cause medicine, and holistic wellness from OLIV Functional Medicine.',
+  },
+  alternates: {
+    canonical: 'https://oliv-functional-medicine.com/blog',
+  },
 };
 
 function formatDate(date: Date | null): string {
@@ -118,12 +135,14 @@ export default async function BlogPage({
                     className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-200"
                   >
                     {/* Cover Image Placeholder */}
-                    <div className="w-full h-48 bg-secondary flex items-center justify-center">
+                    <div className="w-full h-48 bg-secondary flex items-center justify-center relative">
                       {post.coverImageUrl ? (
-                        <img
+                        <Image
                           src={post.coverImageUrl}
                           alt={post.title}
-                          className="w-full h-full object-cover"
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         />
                       ) : (
                         <div className="text-primary text-6xl">✦</div>

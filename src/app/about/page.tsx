@@ -1,9 +1,25 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | OLIV - Functional Medicine",
+  title: "About Us",
   description:
     "Learn about Courtney Castler, MS-HNFM, founder of OLIV Functional Medicine. Discover our mission to transform healthcare through personalized nutrition and functional medicine.",
+  openGraph: {
+    title: "About Us | OLIV - Functional Medicine",
+    description:
+      "Learn about Courtney Castler, MS-HNFM, founder of OLIV Functional Medicine. Discover our mission to transform healthcare through personalized nutrition and functional medicine.",
+    url: "https://oliv-functional-medicine.com/about",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | OLIV - Functional Medicine",
+    description:
+      "Learn about Courtney Castler, MS-HNFM, founder of OLIV Functional Medicine. Discover our mission to transform healthcare through personalized nutrition and functional medicine.",
+  },
+  alternates: {
+    canonical: "https://oliv-functional-medicine.com/about",
+  },
 };
 
 export default function AboutPage() {

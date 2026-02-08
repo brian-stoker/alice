@@ -2,9 +2,25 @@ import type { Metadata } from "next";
 import { FAQAccordion } from "./FAQAccordion";
 
 export const metadata: Metadata = {
-  title: "FAQs | OLIV - Functional Medicine",
+  title: "FAQs",
   description:
     "Frequently asked questions about OLIV's functional nutrition approach, testing, pricing, appointments, and how to get started on your health journey.",
+  openGraph: {
+    title: "FAQs | OLIV - Functional Medicine",
+    description:
+      "Frequently asked questions about OLIV's functional nutrition approach, testing, pricing, appointments, and how to get started on your health journey.",
+    url: "https://oliv-functional-medicine.com/faqs",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FAQs | OLIV - Functional Medicine",
+    description:
+      "Frequently asked questions about OLIV's functional nutrition approach, testing, pricing, appointments, and how to get started on your health journey.",
+  },
+  alternates: {
+    canonical: "https://oliv-functional-medicine.com/faqs",
+  },
 };
 
 const faqs = [
