@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import type { Metadata } from 'next';
+import ScrollReveal from '@/components/ScrollReveal';
 
 interface TimeSlot {
   time: string;
@@ -185,14 +185,20 @@ export default function BookPage() {
 
   return (
     <div className="bg-background min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-primary text-white py-20 md:py-28">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold mb-6">
+      {/* Parallax Hero Section */}
+      <section
+        className="parallax-bg parallax-overlay relative"
+        style={{
+          backgroundImage:
+            'url(https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1920&q=80)',
+        }}
+      >
+        <div className="min-h-[50vh] flex items-center justify-center">
+          <div className="max-w-3xl mx-auto text-center px-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold mb-6 text-white">
               Book Your Appointment
             </h1>
-            <p className="text-lg md:text-xl font-sans">
+            <p className="text-lg md:text-xl font-sans text-white/80">
               Select a date and time that works for you, and we'll confirm your
               appointment within 24 hours.
             </p>
@@ -206,191 +212,199 @@ export default function BookPage() {
           <div className="max-w-4xl mx-auto">
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Contact Information */}
-              <div className="bg-white rounded-lg shadow-md p-8">
-                <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
-                  Your Information
-                </h2>
-                <div className="space-y-6">
-                  <div>
-                    <label
-                      htmlFor="clientName"
-                      className="block text-sm font-sans font-medium text-foreground mb-2"
-                    >
-                      Full Name <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="clientName"
-                      name="clientName"
-                      value={formData.clientName}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg font-sans focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
+              <ScrollReveal animation="default" delay={0}>
+                <div className="bg-white rounded-lg shadow-md p-8">
+                  <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
+                    Your Information
+                  </h2>
+                  <div className="space-y-6">
+                    <div>
+                      <label
+                        htmlFor="clientName"
+                        className="block text-sm font-sans font-medium text-foreground mb-2"
+                      >
+                        Full Name <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="clientName"
+                        name="clientName"
+                        value={formData.clientName}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg font-sans focus:outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="Enter your full name"
+                      />
+                    </div>
 
-                  <div>
-                    <label
-                      htmlFor="clientEmail"
-                      className="block text-sm font-sans font-medium text-foreground mb-2"
-                    >
-                      Email Address <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="clientEmail"
-                      name="clientEmail"
-                      value={formData.clientEmail}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg font-sans focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
+                    <div>
+                      <label
+                        htmlFor="clientEmail"
+                        className="block text-sm font-sans font-medium text-foreground mb-2"
+                      >
+                        Email Address <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        id="clientEmail"
+                        name="clientEmail"
+                        value={formData.clientEmail}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg font-sans focus:outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="your.email@example.com"
+                      />
+                    </div>
 
-                  <div>
-                    <label
-                      htmlFor="clientPhone"
-                      className="block text-sm font-sans font-medium text-foreground mb-2"
-                    >
-                      Phone Number (optional)
-                    </label>
-                    <input
-                      type="tel"
-                      id="clientPhone"
-                      name="clientPhone"
-                      value={formData.clientPhone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg font-sans focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="(555) 123-4567"
-                    />
+                    <div>
+                      <label
+                        htmlFor="clientPhone"
+                        className="block text-sm font-sans font-medium text-foreground mb-2"
+                      >
+                        Phone Number (optional)
+                      </label>
+                      <input
+                        type="tel"
+                        id="clientPhone"
+                        name="clientPhone"
+                        value={formData.clientPhone}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg font-sans focus:outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="(555) 123-4567"
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
 
               {/* Date Selection */}
-              <div className="bg-white rounded-lg shadow-md p-8">
-                <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
-                  Select a Date <span className="text-red-500">*</span>
-                </h2>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                  {availableDates.map((date) => {
-                    const dateString = formatDate(date);
-                    const dayOfWeek = date.getDay();
-                    // Check if it's a weekend (0 = Sunday, 6 = Saturday)
-                    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
-
-                    return (
-                      <button
-                        key={dateString}
-                        type="button"
-                        onClick={() => setSelectedDate(dateString)}
-                        disabled={isWeekend}
-                        className={`
-                          p-3 rounded-lg border-2 font-sans text-sm transition-all
-                          ${
-                            selectedDate === dateString
-                              ? 'border-primary bg-primary text-white'
-                              : isWeekend
-                              ? 'border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed'
-                              : 'border-gray-300 bg-white text-foreground hover:border-primary'
-                          }
-                        `}
-                      >
-                        <div className="font-medium">
-                          {date.toLocaleDateString('en-US', { weekday: 'short' })}
-                        </div>
-                        <div className="text-xs">
-                          {date.toLocaleDateString('en-US', {
-                            month: 'short',
-                            day: 'numeric',
-                          })}
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
-                <p className="text-sm text-text-muted font-sans mt-4">
-                  Weekends are unavailable. Please select a weekday.
-                </p>
-              </div>
-
-              {/* Time Selection */}
-              {selectedDate && (
+              <ScrollReveal animation="default" delay={100}>
                 <div className="bg-white rounded-lg shadow-md p-8">
-                  <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-2">
-                    Select a Time <span className="text-red-500">*</span>
+                  <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
+                    Select a Date <span className="text-red-500">*</span>
                   </h2>
-                  <p className="text-base text-text-muted font-sans mb-6">
-                    {formatDisplayDate(selectedDate)}
-                  </p>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                    {availableDates.map((date) => {
+                      const dateString = formatDate(date);
+                      const dayOfWeek = date.getDay();
+                      // Check if it's a weekend (0 = Sunday, 6 = Saturday)
+                      const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
 
-                  {loadingSlots ? (
-                    <div className="text-center py-8">
-                      <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-gray-300 border-t-primary"></div>
-                      <p className="text-text-muted font-sans mt-4">
-                        Loading available times...
-                      </p>
-                    </div>
-                  ) : availableTimeSlots.length > 0 ? (
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                      {availableTimeSlots.map((slot) => (
+                      return (
                         <button
-                          key={slot.time}
+                          key={dateString}
                           type="button"
-                          onClick={() => setSelectedTime(slot.time)}
+                          onClick={() => setSelectedDate(dateString)}
+                          disabled={isWeekend}
                           className={`
                             p-3 rounded-lg border-2 font-sans text-sm transition-all
                             ${
-                              selectedTime === slot.time
+                              selectedDate === dateString
                                 ? 'border-primary bg-primary text-white'
+                                : isWeekend
+                                ? 'border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed'
                                 : 'border-gray-300 bg-white text-foreground hover:border-primary'
                             }
                           `}
                         >
-                          {formatDisplayTime(slot.time)}
+                          <div className="font-medium">
+                            {date.toLocaleDateString('en-US', { weekday: 'short' })}
+                          </div>
+                          <div className="text-xs">
+                            {date.toLocaleDateString('en-US', {
+                              month: 'short',
+                              day: 'numeric',
+                            })}
+                          </div>
                         </button>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="text-center py-8 bg-secondary rounded-lg">
-                      <p className="text-text-muted font-sans">
-                        No available time slots for this date. Please select another
-                        date.
-                      </p>
-                    </div>
-                  )}
+                      );
+                    })}
+                  </div>
+                  <p className="text-sm text-text-muted font-sans mt-4">
+                    Weekends are unavailable. Please select a weekday.
+                  </p>
                 </div>
+              </ScrollReveal>
+
+              {/* Time Selection */}
+              {selectedDate && (
+                <ScrollReveal animation="default" delay={0}>
+                  <div className="bg-white rounded-lg shadow-md p-8">
+                    <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-2">
+                      Select a Time <span className="text-red-500">*</span>
+                    </h2>
+                    <p className="text-base text-text-muted font-sans mb-6">
+                      {formatDisplayDate(selectedDate)}
+                    </p>
+
+                    {loadingSlots ? (
+                      <div className="text-center py-8">
+                        <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-gray-300 border-t-primary"></div>
+                        <p className="text-text-muted font-sans mt-4">
+                          Loading available times...
+                        </p>
+                      </div>
+                    ) : availableTimeSlots.length > 0 ? (
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                        {availableTimeSlots.map((slot) => (
+                          <button
+                            key={slot.time}
+                            type="button"
+                            onClick={() => setSelectedTime(slot.time)}
+                            className={`
+                              p-3 rounded-lg border-2 font-sans text-sm transition-all
+                              ${
+                                selectedTime === slot.time
+                                  ? 'border-primary bg-primary text-white'
+                                  : 'border-gray-300 bg-white text-foreground hover:border-primary'
+                              }
+                            `}
+                          >
+                            {formatDisplayTime(slot.time)}
+                          </button>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="text-center py-8 bg-secondary rounded-lg">
+                        <p className="text-text-muted font-sans">
+                          No available time slots for this date. Please select another
+                          date.
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </ScrollReveal>
               )}
 
               {/* Additional Message */}
-              <div className="bg-white rounded-lg shadow-md p-8">
-                <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
-                  Additional Information (optional)
-                </h2>
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-sans font-medium text-foreground mb-2"
-                  >
-                    Tell us about your health goals or questions
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg font-sans focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="Share any concerns or topics you'd like to discuss during your appointment (optional)"
-                  />
-                  <p className="text-sm text-text-muted font-sans mt-2">
-                    Note: Please do not include any sensitive health information at
-                    this time.
-                  </p>
+              <ScrollReveal animation="default" delay={200}>
+                <div className="bg-white rounded-lg shadow-md p-8">
+                  <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
+                    Additional Information (optional)
+                  </h2>
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-sans font-medium text-foreground mb-2"
+                    >
+                      Tell us about your health goals or questions
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      rows={4}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg font-sans focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="Share any concerns or topics you'd like to discuss during your appointment (optional)"
+                    />
+                    <p className="text-sm text-text-muted font-sans mt-2">
+                      Note: Please do not include any sensitive health information at
+                      this time.
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
 
               {/* Submit Status */}
               {submitStatus.type && (

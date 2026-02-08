@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { FAQAccordion } from "./FAQAccordion";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "FAQs",
@@ -70,13 +71,19 @@ export default function FAQsPage() {
   return (
     <div className="bg-background">
       {/* Hero Section */}
-      <section className="bg-primary text-white py-16 sm:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-semibold mb-4">
+      <section
+        className="parallax-bg parallax-overlay relative"
+        style={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80)",
+        }}
+      >
+        <div className="min-h-[50vh] flex items-center justify-center">
+          <div className="text-center max-w-3xl mx-auto px-4">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-semibold mb-4 text-white">
               Frequently Asked Questions
             </h1>
-            <p className="text-lg sm:text-xl font-sans text-primary-light">
+            <p className="text-lg sm:text-xl font-sans text-white/80">
               Everything you need to know about functional nutrition and working
               with OLIV
             </p>
@@ -87,27 +94,37 @@ export default function FAQsPage() {
       {/* FAQs Section */}
       <section className="py-16 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FAQAccordion faqs={faqs} />
+          <ScrollReveal>
+            <FAQAccordion faqs={faqs} />
+          </ScrollReveal>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="bg-secondary py-16 sm:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-serif font-semibold text-foreground mb-4">
-            Still Have Questions?
-          </h2>
-          <p className="text-lg font-sans text-text-muted mb-8">
-            We're here to help. Schedule a free discovery call to discuss your
-            specific situation and learn how functional nutrition can support
-            your health goals.
-          </p>
-          <a
-            href="/contact"
-            className="inline-block px-8 py-3 bg-primary text-white hover:bg-primary-dark transition-colors font-serif font-semibold rounded-lg"
-          >
-            Contact Us
-          </a>
+      <section
+        className="parallax-bg parallax-overlay-light relative"
+        style={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1920&q=80)",
+        }}
+      >
+        <div className="py-16 sm:py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl sm:text-4xl font-serif font-semibold text-white mb-4">
+              Still Have Questions?
+            </h2>
+            <p className="text-lg font-sans text-white/80 mb-8">
+              We're here to help. Schedule a free discovery call to discuss your
+              specific situation and learn how functional nutrition can support
+              your health goals.
+            </p>
+            <a
+              href="/contact"
+              className="inline-block px-8 py-3 bg-accent text-white hover:bg-[#c99560] transition-colors font-serif font-semibold rounded-lg"
+            >
+              Contact Us
+            </a>
+          </div>
         </div>
       </section>
     </div>
