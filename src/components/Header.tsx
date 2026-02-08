@@ -6,6 +6,7 @@ export default function Header() {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { label: "Our Approach", href: "/our-approach" },
+    { label: "Blog", href: "/blog" },
     { label: "Start Your Journey", href: "/start-your-journey" },
   ];
 
