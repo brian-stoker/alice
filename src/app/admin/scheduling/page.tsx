@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { AvailabilityWindow } from '@/lib/scheduling';
 
 const DAYS_OF_WEEK = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -170,13 +171,36 @@ export default function SchedulingPage() {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
+      {/* Header with Navigation */}
+      <div>
+        <h1 className="text-3xl font-serif font-bold text-text-dark">
+          Scheduling
+        </h1>
+        <p className="mt-2 text-text-muted mb-4">
+          Manage your availability and booking requests
+        </p>
+
+        {/* Navigation Tabs */}
+        <div className="flex gap-4 mb-6 border-b border-gray-200">
+          <div className="px-4 py-2 font-medium border-b-2 border-primary text-primary">
+            Availability Windows
+          </div>
+          <Link
+            href="/admin/scheduling/requests"
+            className="px-4 py-2 font-medium border-b-2 border-transparent text-text-muted hover:text-text-dark hover:border-gray-300 transition-colors"
+          >
+            Booking Requests
+          </Link>
+        </div>
+      </div>
+
+      {/* Header Actions */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-serif font-bold text-text-dark">
+          <h2 className="text-2xl font-semibold text-text-dark">
             Availability Management
-          </h1>
-          <p className="mt-2 text-text-muted">
+          </h2>
+          <p className="mt-1 text-text-muted">
             Manage your recurring weekly availability windows for appointments
           </p>
         </div>
