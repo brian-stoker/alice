@@ -45,6 +45,12 @@ export default async function AdminLayout({
                 Blog
               </Link>
               <Link
+                href="/admin/scheduling"
+                className="hover:text-accent transition-colors font-medium"
+              >
+                Scheduling
+              </Link>
+              <Link
                 href="/admin/appointments"
                 className="hover:text-accent transition-colors font-medium"
               >
@@ -97,6 +103,12 @@ export default async function AdminLayout({
               className="text-white hover:text-accent transition-colors text-sm font-medium py-2 px-3"
             >
               Blog
+            </Link>
+            <Link
+              href="/admin/scheduling"
+              className="text-white hover:text-accent transition-colors text-sm font-medium py-2 px-3"
+            >
+              Scheduling
             </Link>
             <Link
               href="/admin/appointments"
